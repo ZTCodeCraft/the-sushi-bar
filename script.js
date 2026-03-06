@@ -31,6 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Close menu on outside click
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('active');
+    }
+  });
+
   // --- Menu tabs ---
   const tabs = document.querySelectorAll('.menu__tab');
   const panels = document.querySelectorAll('.menu__panel');
